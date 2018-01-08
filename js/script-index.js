@@ -1,5 +1,5 @@
 $(document).ready( function(){
-	$('.home .js-back').hide();
+	$('.home .js-back').hide(); //Ocultando flecha en index.html
 
 	//alert("recetas");
 	$('#p-callout').text('NUEVAS RECETAS');
@@ -14,9 +14,19 @@ $(document).ready( function(){
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
 */
-function renderHighlightedRecipes(recipesArray) {/*función para mostrar las recetas en la consola*/
+
+function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
+	//console.log('Resultado: ', recipesArray[0].highlighted);
+	for(var i = 0; i < recipesArray.length; i++){ // recorriendo la variable recipesArray
+		if(recipesArray[i].highlighted == true){  //condicional para buscar la propidad highlighted = true
+			 // console.log('resultado', [i]);
+      return renderRecipe([i]); //pasando como parámetro el objeto que cumplió la condición
+	}
 }
+    
+}
+
 
 /*
 * Función que se encarga de pintar UNA recetas que tenga 
