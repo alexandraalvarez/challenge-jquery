@@ -2,7 +2,7 @@ $(document).ready( function(){
 	$('.home .js-back').hide(); //Ocultando flecha en index.html
 
 	//alert("recetas");
-	$('#p-callout').text('NUEVAS RECETAS');
+	$('#p-callout').text('NUEVAS RECETAS');/*para agregar el texto nuevas recetas*/
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
@@ -36,8 +36,11 @@ function renderHighlightedRecipes(recipesArray) {
 */
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
+	$('.list-recipes').append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' + 
+		recipesArray[i].title + '</span><span class="metadata-recipe"><span class="author-recipe">' + 
+		recipesArray[i].source.name + '</span><span class="bookmarks-recipe"><span class="icon-bookmark">'+ 
+		'</span></span></span></span>' + '<img src="' + recipesArray[i].source.url + '"/></a>');
 }
-
 
 
 /*
