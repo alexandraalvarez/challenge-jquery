@@ -16,30 +16,23 @@ $(document).ready( function(){
 */
 
 function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
+	//console.log('Recipes: ', recipesArray);
 	//console.log('Resultado: ', recipesArray[0].highlighted);
 	for(var i = 0; i < recipesArray.length; i++){ // recorriendo la variable recipesArray
 		if(recipesArray[i].highlighted == true){  //condicional para buscar la propidad highlighted = true
 			 // console.log('resultado', [i]);
-      return renderRecipe([i]); //pasando como parámetro el objeto que cumplió la condición
+      	renderRecipe([i]); //pasando como parámetro el objeto que cumplió la condición	
+	  }
+	  function renderRecipe(recipe) {
+			console.log('Voy a pintar la receta: ', [recipe]);
+			$('.list-recipes').append/*('<img src="img/recipes/320x350/' + recipesArray[i].name + '.jpg">')*/
+			('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' + 
+			recipesArray[i].title + '</span><span class="metadata-recipe"><span class="author-recipe">' + 
+			recipesArray[i].source.name + '</span><span class="bookmarks-recipe"><span class="icon-bookmark">'+ 
+			'</span></span></span></span>' + '<img src="img/recipes/320x350/' + recipesArray[i].name + '.jpg"/></a>');
+		}
 	}
-}
     
-}
-
-
-/*
-* Función que se encarga de pintar UNA recetas que tenga 
-* marcado el atributo "highlighted" como TRUE
-* Aqui se tiene que crear el HTML que esta en el 
-* archivo "templates/templates-recipe.html"
-*/
-function renderRecipe(recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
-	$('.list-recipes').append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' + 
-		recipesArray[i].title + '</span><span class="metadata-recipe"><span class="author-recipe">' + 
-		recipesArray[i].source.name + '</span><span class="bookmarks-recipe"><span class="icon-bookmark">'+ 
-		'</span></span></span></span>' + '<img src="' + recipesArray[i].source.url + '"/></a>');
 }
 
 
