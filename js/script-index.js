@@ -6,6 +6,7 @@ $(document).ready( function(){
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
+	renderActivities(activities);
 
 });
 
@@ -24,7 +25,7 @@ function renderHighlightedRecipes(recipesArray) {
       	renderRecipe([i]); //pasando como parámetro el objeto que cumplió la condición	
 	  }
 	  function renderRecipe(recipe) {
-			console.log('Voy a pintar la receta: ', [recipe]);
+			//console.log('Voy a pintar la receta: ', [recipe]);
 			$('.list-recipes').append/*('<img src="img/recipes/320x350/' + recipesArray[i].name + '.jpg">')*/
 			('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' + 
 			recipesArray[i].title + '</span><span class="metadata-recipe"><span class="author-recipe">' + 
@@ -39,17 +40,28 @@ function renderHighlightedRecipes(recipesArray) {
 /*
 * Función que se encarga de pintar todas las actividades
 */
+
 function renderActivities(activitiesArray) {
-	console.log('Activities: ', activitiesArray);
+	//console.log('Activities: ', activitiesArray);
+
+	for (var j = 0; j < activitiesArray.length; j++) {
+		console.log(j);
+	renderActivity(j);
+
+		function renderActivity(recipe) {
+		 if (recipe >= 0) {
+		 	$('.wrapper-message').hide();
+		 }		
+	}	
 }
+}
+
 
 /*
 * Función que se encarga de pintar una actividad
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-activity.html"
 */
-function renderActivity(recipe) {
-	
-}
+
 
 
