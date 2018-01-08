@@ -28,7 +28,6 @@ function renderHighlightedRecipes(recipesArray) {
 		}
 	}  
 }
-
 /* Función que se encarga de pintar todas las actividades*/
 function renderActivities(activitiesArray) {
 	//console.log('Activities: ', activitiesArray);
