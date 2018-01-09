@@ -15,7 +15,7 @@ $('.js-show-make').click( function(){
 	$('.js-show-recipe').removeClass('active');//removiendo clase "active" al a con clase "js-show-recipe"
 });//final función.click pestaña make...no tocar
 
-$('.icon-arrow-left-alt').click( function(){
+/*$('.icon-arrow-left-alt').click( function(){
 	if ($('.page').hasClass('make')) {//si el div clase "page" tiene la clase "make" 
 		$('.page').removeClass('make');//removiendo clase "make" al div con clase "page"
 		$('.js-show-recipe').addClass('active');//agregando clase "active" al a con clase "js-show-recipe"
@@ -25,4 +25,8 @@ $('.icon-arrow-left-alt').click( function(){
 		$('.js-show-make').addClass('active');//agregando clase "active" al a con clase "js-show-make"
 		$('.js-show-recipe').removeClass('active');//removiendo clase "active" al a con clase "js-show-recipe"
 	}
-});//final funcion.click flecha atrás...no tocar
+});final funcion.click flecha atrás...no tocar (yo enntendí ésto)*/
+
+$('.js-back').click(function(){
+	$(this).attr('href','index.html')
+});//ésto es lo que entendió mi compañera
